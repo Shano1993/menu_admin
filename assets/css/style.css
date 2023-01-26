@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+#slide-out {
+    background-color: rgba(0, 0, 0, 0.63);
+}
+
+#slide-out > li > a {
+    color: white;
+}
+
+#container-menu {
+    margin: 2rem;
+}
+
+.subheader {
+    color: red;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#button_submit {
+    background-color: rgba(255, 0, 0, 0.47);
+    color: whitesmoke;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+#button_submit:hover {
+    transform: scale(0.9);
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+        <main class="container">
+            <h1>Menu d'administration</h1>
+            <h5>Liste des utilisateurs</h5>
+            {% if users is defined %}
+                {% for user in users %}
+                    <div class="row">
+                        <a href="/index.php?c=user&a=delete&id={{ user.id }}"><i class="material-icons">clear</i></a>
+                        <div class="col s12 m7">
+                            <div class="card-content">
+                                <p>{{ user.username }}</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">{{ user.email }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </main>
+    {% endblock %}
+{% endblock %}

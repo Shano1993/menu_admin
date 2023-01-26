@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+        <main class="container">
+            <h1>Menu d'administration</h1>
+            <h5>Ajouter un article</h5>
+            <form class="col s12" method="post" enctype="multipart/form-data" action="/index.php?c=article&a=add-article">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" name="title">
+                        <label for="first_name">Titre de l'article</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate" name="content">
+                        <label for="last_name">Contenu de l'article</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="file" type="file" class="validate" name="imageName">
+                        <label for="file"></label>
+                    </div>
+                </div>
+                <input type="submit" name="save" id="button_submit">
+            </form>
+        </main>
+    {% endblock %}
+{% endblock %}

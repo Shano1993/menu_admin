@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+        <main class="container">
+            <h1>Menu d'administration</h1>
+            <h5>Liste des articles</h5>
+            {% if articles is defined %}
+                {% for article in articles %}
+                    <div class="row">
+                        <a href="/index.php?c=article&a=delete&id={{ article.id }}"><i class="material-icons">clear</i></a>
+                        <div class="col s12 m7">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="/img/{{ article.imageName }}" style="width: 20rem; height: 15rem">
+                                </div>
+                                <div class="card-content">
+                                    <p>{{ article.content }}</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="#">{{ article.title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </main>
+    {% endblock %}
+{% endblock %}

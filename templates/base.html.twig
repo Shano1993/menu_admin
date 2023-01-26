@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block css %}{% endblock %}
+    {% block js_top %}{% endblock %}
+</head>
+<body>
+    <div id="container-menu">
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <a href=""><span class="white-text name">Shano1993</span></a>
+                    <a href=""><span class="white-text email">stefan.hanotiau@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a class="subheader red-text">Bienvenue</a></li>
+            <li><a href="/index.php?c=home">Accueil</a></li>
+            <li><a class="subheader red-text">Administration</a></li>
+            <li><a href="/index.php?c=user">Ajouter un utilisateur</a></li>
+            <li><a href="/index.php?c=user&a=list-users">Gestion des utilisateurs</a></li>
+            <li><a class="subheader red-text">Articles</a></li>
+            <li><a class="waves-effect" href="/index.php?c=article&a=list-articles">Liste des articles</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
+    </div>
+
+    {% block body %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Menu d'administration</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Menu</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="/index.php?c=home">Accueil</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/index.php?c=user">Ajouter un utilisateur</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/index.php?c=user&a=list-users">Gestion des utilisateurs</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/index.php?c=article&a=list-articles">Liste des articles</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2023 Copyright Menu administration
+                <a class="grey-text text-lighten-4 right" href="">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    {% block js_bottom %} <script src="/build/js/front-bundle.js"></script> {% endblock %}
+</body>
+</html>
